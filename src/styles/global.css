@@ -727,7 +727,7 @@ button {
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.8rem;
+  padding: 1.4rem;
   display: flex;
   flex-direction: column;
   transition: border-color 0.3s, transform 0.3s var(--ease);
@@ -740,11 +740,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 .project__no {
   font-family: var(--serif);
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   color: var(--ink-3);
 }
 .project__tag {
@@ -759,19 +759,24 @@ button {
 }
 .project__name {
   font-family: var(--serif);
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   letter-spacing: -0.01em;
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.85rem;
+}
+.project__summary {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  line-height: 1.55;
 }
 .project__body {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.6rem;
 }
 .project__row {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--ink-2);
-  line-height: 1.55;
+  line-height: 1.5;
 }
 .project__key {
   display: block;
@@ -789,7 +794,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
-  margin: 1.3rem 0;
+  margin: 1rem 0;
 }
 .project__tech .pill {
   font-size: 0.78rem;
@@ -1214,9 +1219,37 @@ button {
   .grid--services {
     grid-template-columns: 1fr;
   }
+  /* Hero: keep the eyebrow on tidy centered lines, not stretched-out wraps */
+  .hero {
+    padding-top: clamp(1.5rem, 6vw, 3rem);
+  }
+  .hero__eyebrow {
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.2rem;
+  }
   .hero__metrics {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.6rem 1rem;
+  }
+  /* Marquee logos read fine much smaller on phones */
+  .logo-marquee {
+    gap: 0.7rem;
+    margin-bottom: 2.2rem;
+  }
+  .logo-marquee__track {
+    gap: 0.7rem;
+  }
+  .logo-chip {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-sm);
+  }
+  .logo-chip img {
+    width: 30px;
+    height: 30px;
   }
   .footer__inner {
     grid-template-columns: 1fr;
@@ -1229,6 +1262,21 @@ button {
   .grid--trust,
   .process {
     grid-template-columns: 1fr;
+  }
+  .hero__headline {
+    font-size: clamp(1.85rem, 8.5vw, 2.3rem);
+    max-width: 100%;
+  }
+  .hero__subhead {
+    font-size: 1rem;
+  }
+  .logo-chip {
+    width: 52px;
+    height: 52px;
+  }
+  .logo-chip img {
+    width: 26px;
+    height: 26px;
   }
 }
 

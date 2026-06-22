@@ -156,47 +156,33 @@ export const projects = {
   items: [
     {
       name: 'Narasu’s Coffee',
-      problem:
-        'A century-old South Indian coffee brand needed a modern D2C channel — subscriptions, gifting and store locator — to complement its retail presence.',
-      solution:
-        'Built a full e-commerce experience: product catalog, subscription engine, wallet & loyalty, wishlist, mobile-app integration and online payments.',
+      summary:
+        'A D2C e-commerce store for a century-old South Indian coffee brand — subscriptions, gifting, loyalty and online payments.',
       tech: ['React', 'Node.js', 'MongoDB', 'Redis', 'Razorpay'],
-      result:
-        'Heritage brand now sells direct, runs recurring subscriptions and gifting online.',
       demo: 'https://narasuscoffee.in/',
       tag: 'E-commerce · D2C',
     },
     {
       name: 'Green Divine',
-      problem:
-        'A Bengaluru premium artificial-grass and vertical-garden company needed a credible web presence to capture enquiries from architects, designers and homeowners pan-India.',
-      solution:
-        'Designed and built a product-led catalog site with category gallery, project showcase, enquiry forms and a separate online store for direct purchase.',
+      summary:
+        'A product-led site for a premium artificial-grass and vertical-garden brand — catalog, project showcase and an online store.',
       tech: ['React', 'Node.js', 'PostgreSQL', 'Tailwind CSS'],
-      result: 'Live brand site driving qualified leads and online sales across India.',
       demo: 'https://greendivine.in/',
       tag: 'B2C · Catalog & leads',
     },
     {
       name: 'Garuda Impex',
-      problem:
-        'A Mumbai auto engine-parts manufacturer needed an export-ready web presence to attract international bulk buyers and showcase OEM compatibility with major brands.',
-      solution:
-        'Built a product-grid catalog with international enquiry forms, OEM brand carousel, deep-linked product pages and a blog layer for organic visibility.',
+      summary:
+        'A site for an international courier & logistics company — shipping services, coverage details and shipment enquiries.',
       tech: ['React', 'GraphQL', 'Node.js', 'MySQL'],
-      result:
-        'Generating cross-border B2B enquiries; established credibility for export operations.',
       demo: 'https://garudaimpex.net/',
-      tag: 'B2B · Export',
+      tag: 'Courier · Logistics',
     },
     {
       name: 'Puraag Construction',
-      problem:
-        'A construction and infrastructure firm needed a professional presence to win project enquiries and signal scale and reliability to prospective clients.',
-      solution:
-        'Built a project-portfolio site with services breakdown, completed-projects gallery, enquiry funnel and SEO foundation for local discovery.',
+      summary:
+        'A portfolio site for a construction firm — services, completed-projects gallery and an SEO-ready enquiry funnel.',
       tech: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
-      result: 'Credible digital front door that converts enquiries into project leads.',
       demo: 'https://puraagconstruction.in/',
       tag: 'Services · Lead-gen',
     },

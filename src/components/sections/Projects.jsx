@@ -15,20 +15,7 @@ export default function Projects() {
 
             <h3 className="project__name">{p.name}</h3>
 
-            <div className="project__body">
-              <p className="project__row">
-                <span className="project__key">Problem</span>
-                {p.problem}
-              </p>
-              <p className="project__row">
-                <span className="project__key">Solution</span>
-                {p.solution}
-              </p>
-              <p className="project__row project__row--result">
-                <span className="project__key">Result</span>
-                {p.result}
-              </p>
-            </div>
+            <p className="project__summary">{p.summary}</p>
 
             <div className="project__tech">
               {p.tech.map((t) => (
