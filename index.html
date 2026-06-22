@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark light" />
+
+    <title>Satheesh K. — Full-Stack Developer, Equity Researcher & Content/SEO Strategist</title>
+    <meta
+      name="description"
+      content="Full-stack development, equity research, and SEO-led content strategy — delivered end-to-end by one accountable operator who thinks in business outcomes."
+    />
+    <meta name="author" content="Satheesh K." />
+    <meta name="robots" content="index,follow" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Satheesh K. — Engineering · Research · Content & SEO" />
+    <meta
+      property="og:description"
+      content="One accountable operator across software, equity research and SEO content."
+    />
+
+    <!-- Set theme before paint to avoid a flash. No external dependency. -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('theme')
+          var theme =
+            saved ||
+            (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+          document.documentElement.setAttribute('data-theme', theme)
+        } catch (e) {}
+      })()
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
