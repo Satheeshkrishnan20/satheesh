@@ -29,7 +29,9 @@ export default function Hero() {
             Available for freelance · {profile.response}
           </p>
         )}
+      </div>
 
+      <div className="container">
         <dl className="hero__metrics">
           {hero.metrics.map((m) => (
             <div className="hero__metric" key={m.label}>

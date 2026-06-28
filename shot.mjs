@@ -1,38 +1,26 @@
 import { chromium } from 'playwright-core'
-
-const URL = process.env.TEST_URL || 'http://localhost:4173/'
 const browser = await chromium.launch({
   executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe',
-  args: ['--force-device-scale-factor=1'],
 })
-const page = await browser.newPage({ viewport: { width: 1280, height: 900 }, deviceScaleFactor: 1 })
-await page.goto(URL, { waitUntil: 'networkidle' })
-
-// Hero (dark, default)
-await page.screenshot({ path: 'shots/01-hero-dark.png' })
-
-// Scroll to contact (the section from the user's screenshot)
-await page.evaluate(() => document.querySelector('#contact').scrollIntoView())
-await page.waitForTimeout(400)
-await page.screenshot({ path: 'shots/02-contact-dark.png' })
-
-// Light mode hero
-await page.evaluate(() => {
-  localStorage.setItem('theme', 'light')
-  document.documentElement.setAttribute('data-theme', 'light')
-})
-await page.evaluate(() => window.scrollTo(0, 0))
-await page.waitForTimeout(300)
-await page.screenshot({ path: 'shots/03-hero-light.png' })
-
-// Footer (two-column) — step-scroll so reveal-grown sections settle first.
-for (let i = 0; i < 6; i++) {
-  await page.evaluate(() => window.scrollBy(0, window.innerHeight))
-  await page.waitForTimeout(200)
+async function run(w, h, tag, dpr = 1.25) {
+  const page = await browser.newPage({ viewport: { width: w, height: h }, deviceScaleFactor: dpr })
+  await page.goto('http://localhost:4173/', { waitUntil: 'networkidle' })
+  await page.waitForTimeout(1700)
+  await page.screenshot({ path: `shots/${tag}-hero.png` })
+  for (let i = 0; i < 16; i++) {
+    await page.evaluate(() => window.scrollBy(0, window.innerHeight))
+    await page.waitForTimeout(120)
+  }
+  for (const id of ['impact', 'stack', 'work', 'services', 'trust', 'process', 'contact']) {
+    try {
+      await page.locator(`#${id}`).scrollIntoViewIfNeeded()
+      await page.waitForTimeout(550)
+      await page.locator(`#${id}`).screenshot({ path: `shots/${tag}-${id}.png` })
+    } catch (e) { console.log('skip', id) }
+  }
+  await page.close()
 }
-await page.evaluate(() => document.querySelector('.footer').scrollIntoView({ block: 'end' }))
-await page.waitForTimeout(400)
-await page.screenshot({ path: 'shots/04-footer-light.png' })
-
+await run(1280, 880, 'c')
+await run(390, 800, 'cm', 2)
 await browser.close()
-console.log('screenshots written to shots/')
+console.log('ok')

@@ -17,12 +17,7 @@ export default function Section({ id, index, eyebrow, title, subtitle, children,
       <div className="container">
         {(eyebrow || title) && (
           <header className="section__header">
-            {(index || eyebrow) && (
-              <p className="section__eyebrow">
-                {index && <span className="section__index">{index}</span>}
-                {eyebrow}
-              </p>
-            )}
+            {eyebrow && <p className="section__eyebrow">{eyebrow}</p>}
             {title && <h2 className="section__title">{title}</h2>}
             {subtitle && <p className="section__subtitle">{subtitle}</p>}
           </header>
